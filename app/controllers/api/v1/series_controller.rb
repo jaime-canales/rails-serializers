@@ -13,7 +13,6 @@ module Api
 
       def create
         series = Series.new(series_params)
-        byebug
         if series.save
           render json: SeriesSerializer.new(series, include: [:tags]).serialized_json
         else
